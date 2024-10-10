@@ -1,28 +1,46 @@
-//
-//  HomeView.swift
-//  ccunsaProyecto
-//
-//  Created by epismac on 7/10/24.
-//
-
 import SwiftUI
 import CoreData
 
 struct HomeView: View {
     @Environment(\.managedObjectContext) var managedObjContext
-    @FetchRequest(sortDescriptors: [], predicate: NSPredicate(format: "userName == %@" /* Aquí debes pasar el username del usuario actual */)) var account: FetchedResults<Account>
+    @FetchRequest var account: FetchedResults<Account>
+    
+    @State private var userName: String = "159"
+    @State private var password: String = "159"
+    
+    init() {
+        // Usa el nombre de usuario para inicializar la FetchRequest
+        let predicate = NSPredicate(format: "userName == %@", "159")
+        _account = FetchRequest<Account>(sortDescriptors: [], predicate: predicate)
+    }
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 20) {
             if let userAccount = account.first {
                 Text("Bienvenido, \(userAccount.firstName ?? "Usuario")!")
-                // Mostrar más información del usuario
+                    .font(.largeTitle)
+                    .padding()
+                Spacer()
+                
             } else {
                 Text("No se encontró la cuenta.")
             }
         }
-        .navigationTitle("Account")
+        .navigationTitle("Home")
+        .onAppear {
+            validateLogin()
+        }
+    }
+    
+    private func validateLogin() {
+        if let userAccount = account.first {
+            if userAccount.password == password {
+                
+                print("Ingreso exitoso")
+            } else {
+                
+                print("Contraseña incorrecta")
+            }
+        }
     }
 }
-
-

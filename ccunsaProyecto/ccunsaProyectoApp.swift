@@ -15,11 +15,11 @@ struct ccunsaProyectoApp: App {
     var body: some Scene {
         WindowGroup {
             if isLoggedin {
-                HomeView()
-                    .environment(\.managedObjectContext, dataController.container.viewContext) // Pasar el contexto aquí
+                MainTabView(isLoggedin: $isLoggedin)
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
             } else {
                 LoginView(isLoggedin: $isLoggedin)
-                    .environment(\.managedObjectContext, dataController.container.viewContext) // Pasar el contexto aquí también
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
             }
         }
     }

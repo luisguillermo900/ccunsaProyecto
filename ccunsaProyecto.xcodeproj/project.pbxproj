@@ -16,6 +16,12 @@
 		8C7F79842CB4FB04003BCB10 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F79832CB4FB04003BCB10 /* CreateAccountView.swift */; };
 		8C7F79882CB4FBC4003BCB10 /* ccunsaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F79862CB4FBC4003BCB10 /* ccunsaModel.xcdatamodeld */; };
 		8C7F798A2CB4FDF0003BCB10 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F79892CB4FDF0003BCB10 /* DataController.swift */; };
+		8CA220DD2CB7475700296D5E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA220DC2CB7475700296D5E /* MainTabView.swift */; };
+		8CA220DF2CB747E800296D5E /* PaintingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA220DE2CB747E800296D5E /* PaintingListView.swift */; };
+		8CA220E12CB7480C00296D5E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA220E02CB7480C00296D5E /* MapView.swift */; };
+		8CA220E32CB7482B00296D5E /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA220E22CB7482B00296D5E /* QRScannerView.swift */; };
+		8CB081542CB7373000E45ACE /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */; };
+		8CB081552CB7373000E45ACE /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,12 @@
 		8C7F79832CB4FB04003BCB10 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		8C7F79872CB4FBC4003BCB10 /* ccunsaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ccunsaModel.xcdatamodel; sourceTree = "<group>"; };
 		8C7F79892CB4FDF0003BCB10 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		8CA220DC2CB7475700296D5E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		8CA220DE2CB747E800296D5E /* PaintingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingListView.swift; sourceTree = "<group>"; };
+		8CA220E02CB7480C00296D5E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		8CA220E22CB7482B00296D5E /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataClass.swift"; path = "DataModel/Account+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataProperties.swift"; path = "DataModel/Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +57,8 @@
 		8C7F79642CB4FA3C003BCB10 = {
 			isa = PBXGroup;
 			children = (
+				8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */,
+				8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */,
 				8C7F79852CB4FB7D003BCB10 /* DataModel */,
 				8C7F797E2CB4FAD1003BCB10 /* Views */,
 				8C7F796F2CB4FA3C003BCB10 /* ccunsaProyecto */,
@@ -85,6 +99,10 @@
 				8C7F797F2CB4FAE1003BCB10 /* LoginView.swift */,
 				8C7F79812CB4FAEE003BCB10 /* HomeView.swift */,
 				8C7F79832CB4FB04003BCB10 /* CreateAccountView.swift */,
+				8CA220DC2CB7475700296D5E /* MainTabView.swift */,
+				8CA220DE2CB747E800296D5E /* PaintingListView.swift */,
+				8CA220E02CB7480C00296D5E /* MapView.swift */,
+				8CA220E22CB7482B00296D5E /* QRScannerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,13 +186,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA220DF2CB747E800296D5E /* PaintingListView.swift in Sources */,
+				8CA220E12CB7480C00296D5E /* MapView.swift in Sources */,
 				8C7F798A2CB4FDF0003BCB10 /* DataController.swift in Sources */,
 				8C7F79802CB4FAE1003BCB10 /* LoginView.swift in Sources */,
 				8C7F79822CB4FAEE003BCB10 /* HomeView.swift in Sources */,
 				8C7F79882CB4FBC4003BCB10 /* ccunsaModel.xcdatamodeld in Sources */,
 				8C7F79732CB4FA3C003BCB10 /* ContentView.swift in Sources */,
 				8C7F79712CB4FA3C003BCB10 /* ccunsaProyectoApp.swift in Sources */,
+				8CA220E32CB7482B00296D5E /* QRScannerView.swift in Sources */,
+				8CB081552CB7373000E45ACE /* Account+CoreDataProperties.swift in Sources */,
+				8CA220DD2CB7475700296D5E /* MainTabView.swift in Sources */,
 				8C7F79842CB4FB04003BCB10 /* CreateAccountView.swift in Sources */,
+				8CB081542CB7373000E45ACE /* Account+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +339,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,9 +347,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danp.ccunsaProyecto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -343,6 +371,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -350,9 +379,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danp.ccunsaProyecto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
