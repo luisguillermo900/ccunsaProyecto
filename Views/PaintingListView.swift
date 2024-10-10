@@ -12,27 +12,29 @@ struct PaintingListView: View {
     let galleries = ["Galería 1", "Galería 2", "Galería 3"] // Lista de galerías
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("Lista de Pinturas en Exposición")
-                .font(.largeTitle)
-                .padding()
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Lista de Pinturas en Exposición")
+                    .font(.largeTitle)
+                    .padding()
             
-            // Picker para seleccionar la galería
-            Picker("Selecciona una galería", selection: $selectedGallery) {
-                ForEach(galleries, id: \.self) { gallery in
-                    Text(gallery).tag(gallery) // Cada opción del Picker
+                // Picker para seleccionar la galería
+                Picker("Selecciona una galería", selection: $selectedGallery) {
+                    ForEach(galleries, id: \.self) { gallery in
+                        Text(gallery).tag(gallery) // Cada opción del Picker
+                    }
                 }
-            }
-            .pickerStyle(MenuPickerStyle()) // cambiar el estilo del Picker
-            .padding()
+                .pickerStyle(MenuPickerStyle()) // cambiar el estilo del Picker
+                .padding()
 
-            // Lista para el conjunto de pinturas
-            List {
-                ForEach(0..<10) { index in
-                    Text("Pintura \(index + 1) en \(selectedGallery)")
+                // Lista para el conjunto de pinturas
+                List {
+                    ForEach(0..<10) { index in
+                        Text("Pintura \(index + 1) en \(selectedGallery)")
+                    }
                 }
+                Spacer()
             }
-            Spacer()
         }
         .navigationTitle("Pinturas")
         .padding()
