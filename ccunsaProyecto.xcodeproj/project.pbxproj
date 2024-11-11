@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,10 @@
 		8CA220E32CB7482B00296D5E /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA220E22CB7482B00296D5E /* QRScannerView.swift */; };
 		8CB081542CB7373000E45ACE /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */; };
 		8CB081552CB7373000E45ACE /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */; };
+		ECB83BB12CE26DD70031DF8C /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB83BB02CE26DD70031DF8C /* Permission.swift */; };
+		ECB83BB32CE26E0C0031DF8C /* VistaCamara.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB83BB22CE26E0C0031DF8C /* VistaCamara.swift */; };
+		ECB83BB52CE26E2B0031DF8C /* QRScannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB83BB42CE26E2B0031DF8C /* QRScannerDelegate.swift */; };
+		ECB83BB72CE26E560031DF8C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB83BB62CE26E560031DF8C /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		8CA220E22CB7482B00296D5E /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataClass.swift"; path = "DataModel/Account+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataProperties.swift"; path = "DataModel/Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ECB83BB02CE26DD70031DF8C /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
+		ECB83BB22CE26E0C0031DF8C /* VistaCamara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCamara.swift; sourceTree = "<group>"; };
+		ECB83BB42CE26E2B0031DF8C /* QRScannerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerDelegate.swift; sourceTree = "<group>"; };
+		ECB83BB62CE26E560031DF8C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,9 @@
 				8CA220DE2CB747E800296D5E /* PaintingListView.swift */,
 				8CA220E02CB7480C00296D5E /* MapView.swift */,
 				8CA220E22CB7482B00296D5E /* QRScannerView.swift */,
+				ECB83BB22CE26E0C0031DF8C /* VistaCamara.swift */,
+				ECB83BB42CE26E2B0031DF8C /* QRScannerDelegate.swift */,
+				ECB83BB62CE26E560031DF8C /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +123,7 @@
 			children = (
 				8C7F79862CB4FBC4003BCB10 /* ccunsaModel.xcdatamodeld */,
 				8C7F79892CB4FDF0003BCB10 /* DataController.swift */,
+				ECB83BB02CE26DD70031DF8C /* Permission.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -142,7 +154,6 @@
 		8C7F79652CB4FA3C003BCB10 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
@@ -152,7 +163,7 @@
 				};
 			};
 			buildConfigurationList = 8C7F79682CB4FA3C003BCB10 /* Build configuration list for PBXProject "ccunsaProyecto" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -189,11 +200,15 @@
 				8CA220DF2CB747E800296D5E /* PaintingListView.swift in Sources */,
 				8CA220E12CB7480C00296D5E /* MapView.swift in Sources */,
 				8C7F798A2CB4FDF0003BCB10 /* DataController.swift in Sources */,
+				ECB83BB72CE26E560031DF8C /* ImagePicker.swift in Sources */,
 				8C7F79802CB4FAE1003BCB10 /* LoginView.swift in Sources */,
 				8C7F79822CB4FAEE003BCB10 /* HomeView.swift in Sources */,
 				8C7F79882CB4FBC4003BCB10 /* ccunsaModel.xcdatamodeld in Sources */,
 				8C7F79732CB4FA3C003BCB10 /* ContentView.swift in Sources */,
 				8C7F79712CB4FA3C003BCB10 /* ccunsaProyectoApp.swift in Sources */,
+				ECB83BB12CE26DD70031DF8C /* Permission.swift in Sources */,
+				ECB83BB32CE26E0C0031DF8C /* VistaCamara.swift in Sources */,
+				ECB83BB52CE26E2B0031DF8C /* QRScannerDelegate.swift in Sources */,
 				8CA220E32CB7482B00296D5E /* QRScannerView.swift in Sources */,
 				8CB081552CB7373000E45ACE /* Account+CoreDataProperties.swift in Sources */,
 				8CA220DD2CB7475700296D5E /* MainTabView.swift in Sources */,
@@ -339,7 +354,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,7 +386,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
