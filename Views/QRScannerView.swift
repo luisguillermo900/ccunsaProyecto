@@ -24,6 +24,7 @@ struct QRScannerView: View {
     @Environment(\.openURL) private var openURL
     
     //Para subir una imagen
+    @State private var isShowingDetail = false
     @State private var selectedImage: UIImage? = nil
     @State private var isImagePickerPresented: Bool = false
     @State private var modoCaptura: Int = 1 //1:Camara, 2: imagen
@@ -126,12 +127,11 @@ struct QRScannerView: View {
                                 .foregroundColor(.blue)
                         }
                         Spacer()
+                        
                     }
-                    //.frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 .padding(.horizontal, 45)
                 
-                //Spacer(minLength: 15)
                 if(selectedImage == nil) {
                     Text("No hay imagen seleccionada")
                     .foregroundColor(.gray)
@@ -149,7 +149,6 @@ struct QRScannerView: View {
                 .sheet(isPresented: $isImagePickerPresented, onDismiss: detectQRCode) {
                     ImagePicker(selectedImage: $selectedImage)
                 }
-                //Spacer(minLength: 40)
             }
         }
         .padding(15)
@@ -175,6 +174,13 @@ struct QRScannerView: View {
                 qrDelegate.scannedCode = nil
             }
         }
+        .background(
+            NavigationLink(
+                destination: DetallePintura(id: qrCodeContent),
+                isActive: $isShowingDetail,
+                label: { EmptyView() }
+            )
+        )
     }
     
     func reactivateCamera(){
@@ -270,6 +276,7 @@ struct QRScannerView: View {
         if let features = detector?.features(in: ciImage), !features.isEmpty {
             for feature in features as! [CIQRCodeFeature] {
                 qrCodeContent = feature.messageString
+                isShowingDetail = true
             }
         } else {
             qrCodeContent = "No se detectó un código QR en la imagen."

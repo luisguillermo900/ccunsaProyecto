@@ -21,6 +21,8 @@ struct ccunsaProyectoApp: App {
                 LoginView(isLoggedin: $isLoggedin)
                     .environment(\.managedObjectContext, dataController.container.viewContext)
             }
+            //Solo para depurar
+            //DetallePintura(id: "1")
         }
     }
 }
