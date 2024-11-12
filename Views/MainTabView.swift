@@ -21,7 +21,7 @@ struct MainTabView: View {
         NavigationView {
             VStack {
                 // botón de logout
-                HStack {
+                /*HStack {
                     Spacer()
                     Button(action: {
                         isLoggedin = false // Logout
@@ -31,8 +31,7 @@ struct MainTabView: View {
                             .foregroundColor(.red)
                     }
                     .padding()
-                }
-
+                }*/
                 Spacer() // Para empujar el contenido hacia arriba
 
                 switch selectedTab {
@@ -93,6 +92,17 @@ struct MainTabView: View {
                 .padding()
             }
             .navigationTitle("Galería")
+            .navigationBarItems(
+                        trailing: Button(action: {
+                            isLoggedin = false // Logout
+                        }) {
+                            Image(systemName: "arrow.right.circle") // Icono de logout
+                                .font(.title)
+                                .foregroundColor(.red)
+                                .padding(.top, 8) // Ajusta el padding superior
+                                .offset(y: 40)
+                        }
+                    )
         }
     }
 }

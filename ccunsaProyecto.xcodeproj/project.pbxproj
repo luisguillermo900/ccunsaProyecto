@@ -22,6 +22,7 @@
 		8CA220E32CB7482B00296D5E /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA220E22CB7482B00296D5E /* QRScannerView.swift */; };
 		8CB081542CB7373000E45ACE /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */; };
 		8CB081552CB7373000E45ACE /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */; };
+		EC21ECF82CE2D5E400667147 /* DetallePintura.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC21ECF72CE2D5E400667147 /* DetallePintura.swift */; };
 		ECB83BB12CE26DD70031DF8C /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB83BB02CE26DD70031DF8C /* Permission.swift */; };
 		ECB83BB32CE26E0C0031DF8C /* VistaCamara.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB83BB22CE26E0C0031DF8C /* VistaCamara.swift */; };
 		ECB83BB52CE26E2B0031DF8C /* QRScannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB83BB42CE26E2B0031DF8C /* QRScannerDelegate.swift */; };
@@ -45,6 +46,7 @@
 		8CA220E22CB7482B00296D5E /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataClass.swift"; path = "DataModel/Account+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataProperties.swift"; path = "DataModel/Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EC21ECF72CE2D5E400667147 /* DetallePintura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallePintura.swift; sourceTree = "<group>"; };
 		ECB83BB02CE26DD70031DF8C /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		ECB83BB22CE26E0C0031DF8C /* VistaCamara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCamara.swift; sourceTree = "<group>"; };
 		ECB83BB42CE26E2B0031DF8C /* QRScannerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				ECB83BB22CE26E0C0031DF8C /* VistaCamara.swift */,
 				ECB83BB42CE26E2B0031DF8C /* QRScannerDelegate.swift */,
 				ECB83BB62CE26E560031DF8C /* ImagePicker.swift */,
+				EC21ECF72CE2D5E400667147 /* DetallePintura.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				8C7F79882CB4FBC4003BCB10 /* ccunsaModel.xcdatamodeld in Sources */,
 				8C7F79732CB4FA3C003BCB10 /* ContentView.swift in Sources */,
 				8C7F79712CB4FA3C003BCB10 /* ccunsaProyectoApp.swift in Sources */,
+				EC21ECF82CE2D5E400667147 /* DetallePintura.swift in Sources */,
 				ECB83BB12CE26DD70031DF8C /* Permission.swift in Sources */,
 				ECB83BB32CE26E0C0031DF8C /* VistaCamara.swift in Sources */,
 				ECB83BB52CE26E2B0031DF8C /* QRScannerDelegate.swift in Sources */,

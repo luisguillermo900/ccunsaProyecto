@@ -35,7 +35,6 @@ struct QRScannerView: View {
     
     var body: some View {
         VStack(spacing: 8){
-            Spacer(minLength: 15)
             Picker("Select Segment", selection: $selectedSegment) {
                 ForEach(segments, id: \.self) { segment in
                     Text(segment)
@@ -106,12 +105,11 @@ struct QRScannerView: View {
                 Text("El escaneo comenzara automaticamente")
                     .font(.callout)
                     .foregroundColor(.gray)
-                Spacer()
+                Spacer(minLength: 0)
                 
                 GeometryReader {
                     let size = $0.size
-                    VStack { //<= here
-                        Spacer()
+                    VStack {
                         ZStack{
                             if let image = selectedImage {
                                 Image(uiImage: image)
@@ -126,10 +124,6 @@ struct QRScannerView: View {
                             Text("QR Content: \(qrContent)")
                                 .padding()
                                 .foregroundColor(.blue)
-                        } else {
-                            Text("No QR Code detected")
-                                .padding()
-                                .foregroundColor(.red)
                         }
                         Spacer()
                     }
@@ -155,7 +149,7 @@ struct QRScannerView: View {
                 .sheet(isPresented: $isImagePickerPresented, onDismiss: detectQRCode) {
                     ImagePicker(selectedImage: $selectedImage)
                 }
-                Spacer(minLength: 40)
+                //Spacer(minLength: 40)
             }
         }
         .padding(15)
