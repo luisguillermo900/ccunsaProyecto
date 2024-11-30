@@ -52,8 +52,8 @@
 		8CA220DE2CB747E800296D5E /* PaintingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingListView.swift; sourceTree = "<group>"; };
 		8CA220E02CB7480C00296D5E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8CA220E22CB7482B00296D5E /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
-		8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataClass.swift"; path = "DataModel/Account+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataProperties.swift"; path = "DataModel/Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EC21ECF72CE2D5E400667147 /* DetallePintura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallePintura.swift; sourceTree = "<group>"; };
 		ECB83BB02CE26DD70031DF8C /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		ECB83BB22CE26E0C0031DF8C /* VistaCamara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCamara.swift; sourceTree = "<group>"; };
@@ -75,6 +75,8 @@
 		6B0D70B82CE47E5100C76D6D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */,
+				8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */,
 				6B0D70BA2CE47FD300C76D6D /* Picture.swift */,
 			);
 			path = Models;
@@ -102,8 +104,6 @@
 				6B0D70BE2CE4822700C76D6D /* ViewModels */,
 				6B0D70B92CE47E7400C76D6D /* Services */,
 				6B0D70B82CE47E5100C76D6D /* Models */,
-				8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */,
-				8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */,
 				8C7F79852CB4FB7D003BCB10 /* DataModel */,
 				8C7F797E2CB4FAD1003BCB10 /* Views */,
 				8C7F796F2CB4FA3C003BCB10 /* ccunsaProyecto */,
