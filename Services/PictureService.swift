@@ -9,7 +9,7 @@ import Foundation
 
 class PictureService {
     static func fetchPictures(for room: String, page: Int, completion: @escaping (Result<[Picture], Error>) -> Void) {
-        guard let url = URL(string: "http://192.168.1.2:3001/api/ccunsa/pictures?room=\(room)&page=\(page)") else {
+        guard let url = URL(string: "http://192.168.1.4:3001/api/ccunsa/pictures?room=\(room)&page=\(page)") else {
             return
         }
 
