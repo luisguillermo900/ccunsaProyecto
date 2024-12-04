@@ -10,11 +10,6 @@ import SwiftUI
 struct MapView: View {
     var body: some View {
         VStack {
-            Text("Mapa de la Galería")
-                .font(.largeTitle)
-                .padding()
-            Spacer()
-
             // ScrollView para permitir desplazamiento
             ScrollView {
                 // Canvas para dibujar el mapa

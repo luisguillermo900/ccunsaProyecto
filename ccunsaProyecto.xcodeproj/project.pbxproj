@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6B0D70BB2CE47FD300C76D6D /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D70BA2CE47FD300C76D6D /* Picture.swift */; };
-		6B0D70BD2CE480CF00C76D6D /* PictureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D70BC2CE480CF00C76D6D /* PictureService.swift */; };
-		6B0D70C02CE4825B00C76D6D /* PictureListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D70BF2CE4825B00C76D6D /* PictureListViewModel.swift */; };
 		6B0D70C22CE4C1A200C76D6D /* PictureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D70C12CE4C1A200C76D6D /* PictureDetailView.swift */; };
+		6B720DB22CFB7371006F2AF1 /* PictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720DB12CFB7371006F2AF1 /* PictureViewModel.swift */; };
+		6B720DB42CFB8BAA006F2AF1 /* PictureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720DB32CFB8BAA006F2AF1 /* PictureRowView.swift */; };
+		6BC409662CFDF93B009814EA /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC409652CFDF93B009814EA /* Repository.swift */; };
 		8C7F79712CB4FA3C003BCB10 /* ccunsaProyectoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F79702CB4FA3C003BCB10 /* ccunsaProyectoApp.swift */; };
 		8C7F79732CB4FA3C003BCB10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F79722CB4FA3C003BCB10 /* ContentView.swift */; };
 		8C7F79752CB4FA3E003BCB10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F79742CB4FA3E003BCB10 /* Assets.xcassets */; };
@@ -35,9 +36,10 @@
 
 /* Begin PBXFileReference section */
 		6B0D70BA2CE47FD300C76D6D /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
-		6B0D70BC2CE480CF00C76D6D /* PictureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureService.swift; sourceTree = "<group>"; };
-		6B0D70BF2CE4825B00C76D6D /* PictureListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureListViewModel.swift; sourceTree = "<group>"; };
 		6B0D70C12CE4C1A200C76D6D /* PictureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailView.swift; sourceTree = "<group>"; };
+		6B720DB12CFB7371006F2AF1 /* PictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewModel.swift; sourceTree = "<group>"; };
+		6B720DB32CFB8BAA006F2AF1 /* PictureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureRowView.swift; sourceTree = "<group>"; };
+		6BC409652CFDF93B009814EA /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		8C7F796D2CB4FA3C003BCB10 /* ccunsaProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ccunsaProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7F79702CB4FA3C003BCB10 /* ccunsaProyectoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ccunsaProyectoApp.swift; sourceTree = "<group>"; };
 		8C7F79722CB4FA3C003BCB10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				8CB081522CB7373000E45ACE /* Account+CoreDataClass.swift */,
 				8CB081532CB7373000E45ACE /* Account+CoreDataProperties.swift */,
 				6B0D70BA2CE47FD300C76D6D /* Picture.swift */,
+				6BC409652CFDF93B009814EA /* Repository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -85,7 +88,6 @@
 		6B0D70B92CE47E7400C76D6D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				6B0D70BC2CE480CF00C76D6D /* PictureService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -93,7 +95,7 @@
 		6B0D70BE2CE4822700C76D6D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				6B0D70BF2CE4825B00C76D6D /* PictureListViewModel.swift */,
+				6B720DB12CFB7371006F2AF1 /* PictureViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -153,6 +155,7 @@
 				ECB83BB62CE26E560031DF8C /* ImagePicker.swift */,
 				EC21ECF72CE2D5E400667147 /* DetallePintura.swift */,
 				6B0D70C12CE4C1A200C76D6D /* PictureDetailView.swift */,
+				6B720DB32CFB8BAA006F2AF1 /* PictureRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,9 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B0D70C02CE4825B00C76D6D /* PictureListViewModel.swift in Sources */,
 				8CA220DF2CB747E800296D5E /* PaintingListView.swift in Sources */,
 				8CA220E12CB7480C00296D5E /* MapView.swift in Sources */,
+				6BC409662CFDF93B009814EA /* Repository.swift in Sources */,
 				8C7F798A2CB4FDF0003BCB10 /* DataController.swift in Sources */,
 				ECB83BB72CE26E560031DF8C /* ImagePicker.swift in Sources */,
 				8C7F79802CB4FAE1003BCB10 /* LoginView.swift in Sources */,
@@ -248,13 +251,14 @@
 				8C7F79712CB4FA3C003BCB10 /* ccunsaProyectoApp.swift in Sources */,
 				6B0D70C22CE4C1A200C76D6D /* PictureDetailView.swift in Sources */,
 				EC21ECF82CE2D5E400667147 /* DetallePintura.swift in Sources */,
+				6B720DB42CFB8BAA006F2AF1 /* PictureRowView.swift in Sources */,
 				ECB83BB12CE26DD70031DF8C /* Permission.swift in Sources */,
 				ECB83BB32CE26E0C0031DF8C /* VistaCamara.swift in Sources */,
 				ECB83BB52CE26E2B0031DF8C /* QRScannerDelegate.swift in Sources */,
 				8CA220E32CB7482B00296D5E /* QRScannerView.swift in Sources */,
 				8CB081552CB7373000E45ACE /* Account+CoreDataProperties.swift in Sources */,
+				6B720DB22CFB7371006F2AF1 /* PictureViewModel.swift in Sources */,
 				8CA220DD2CB7475700296D5E /* MainTabView.swift in Sources */,
-				6B0D70BD2CE480CF00C76D6D /* PictureService.swift in Sources */,
 				6B0D70BB2CE47FD300C76D6D /* Picture.swift in Sources */,
 				8C7F79842CB4FB04003BCB10 /* CreateAccountView.swift in Sources */,
 				8CB081542CB7373000E45ACE /* Account+CoreDataClass.swift in Sources */,

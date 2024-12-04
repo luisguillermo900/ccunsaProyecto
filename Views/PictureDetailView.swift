@@ -8,32 +8,38 @@
 import SwiftUI
 
 struct PictureDetailView: View {
-    let picture: Picture
+    let picture: Pictures
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 // Imagen Principal
-                AsyncImage(url: URL(string: picture.url)) { image in
+                AsyncImage(url: URL(string: picture.linkImage)) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(maxHeight: 500)
                 } placeholder: {
-                    ProgressView()
-                        .frame(height: 300)
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 40, alignment:  .center)
+                        .foregroundStyle(Color.white.opacity(0.7))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+                .frame(height: 300)
+                .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
+                
                 
                 // Información básica
                 VStack(alignment: .leading) {
-                    Text(picture.title)
+                    Text(picture.name)
                         .font(.title)
                         .bold()
                         .padding(.bottom)
                     
                     Text("Artista")
                         .font(.headline)
-                    Text(picture.author)
+                    Text("\(picture.authorId)")
                         .padding(.bottom)
                         
                     Text("Tecnica")
@@ -59,7 +65,7 @@ struct PictureDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        //.ignoresSafeArea(.container, edges: .top)
     }
-    
 }
 

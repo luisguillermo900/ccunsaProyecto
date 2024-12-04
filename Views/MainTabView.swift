@@ -93,16 +93,16 @@ struct MainTabView: View {
             }
             .navigationTitle("Galería")
             .navigationBarItems(
-                        trailing: Button(action: {
-                            isLoggedin = false // Logout
-                        }) {
-                            Image(systemName: "arrow.right.circle") // Icono de logout
-                                .font(.title)
-                                .foregroundColor(.red)
-                                .padding(.top, 8) // Ajusta el padding superior
-                                .offset(y: 40)
-                        }
-                    )
+                trailing: Button(action: {
+                    isLoggedin = false // Logout
+                }) {
+                    Image(systemName: "arrow.right.circle") // Icono de logout
+                        .font(.title)
+                        .foregroundColor(.red)
+                        .padding(.top, 8) // Ajusta el padding superior
+                        .offset(y: 40)
+                }
+            )
         }
     }
 }
