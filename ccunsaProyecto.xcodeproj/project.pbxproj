@@ -12,6 +12,7 @@
 		6B720DB22CFB7371006F2AF1 /* PictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720DB12CFB7371006F2AF1 /* PictureViewModel.swift */; };
 		6B720DB42CFB8BAA006F2AF1 /* PictureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720DB32CFB8BAA006F2AF1 /* PictureRowView.swift */; };
 		6BC409662CFDF93B009814EA /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC409652CFDF93B009814EA /* Repository.swift */; };
+		6BF0D1412D026CC900267440 /* ArtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0D1402D026CC900267440 /* ArtView.swift */; };
 		8C7F79712CB4FA3C003BCB10 /* ccunsaProyectoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F79702CB4FA3C003BCB10 /* ccunsaProyectoApp.swift */; };
 		8C7F79732CB4FA3C003BCB10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F79722CB4FA3C003BCB10 /* ContentView.swift */; };
 		8C7F79752CB4FA3E003BCB10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F79742CB4FA3E003BCB10 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		6B720DB12CFB7371006F2AF1 /* PictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewModel.swift; sourceTree = "<group>"; };
 		6B720DB32CFB8BAA006F2AF1 /* PictureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureRowView.swift; sourceTree = "<group>"; };
 		6BC409652CFDF93B009814EA /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		6BF0D1402D026CC900267440 /* ArtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtView.swift; sourceTree = "<group>"; };
 		8C7F796D2CB4FA3C003BCB10 /* ccunsaProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ccunsaProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7F79702CB4FA3C003BCB10 /* ccunsaProyectoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ccunsaProyectoApp.swift; sourceTree = "<group>"; };
 		8C7F79722CB4FA3C003BCB10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				EC21ECF72CE2D5E400667147 /* DetallePintura.swift */,
 				6B0D70C12CE4C1A200C76D6D /* PictureDetailView.swift */,
 				6B720DB32CFB8BAA006F2AF1 /* PictureRowView.swift */,
+				6BF0D1402D026CC900267440 /* ArtView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				8C7F79882CB4FBC4003BCB10 /* ccunsaModel.xcdatamodeld in Sources */,
 				8C7F79732CB4FA3C003BCB10 /* ContentView.swift in Sources */,
 				8C7F79712CB4FA3C003BCB10 /* ccunsaProyectoApp.swift in Sources */,
+				6BF0D1412D026CC900267440 /* ArtView.swift in Sources */,
 				6B0D70C22CE4C1A200C76D6D /* PictureDetailView.swift in Sources */,
 				EC21ECF82CE2D5E400667147 /* DetallePintura.swift in Sources */,
 				6B720DB42CFB8BAA006F2AF1 /* PictureRowView.swift in Sources */,

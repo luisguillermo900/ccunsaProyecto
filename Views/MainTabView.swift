@@ -38,9 +38,10 @@ struct MainTabView: View {
                 case .home:
                     HomeView()
                 case .paintingList:
-                    PaintingListView()
+                    ArtView()
+                    //PaintingListView()
                 case .map:
-                    MapView()
+                    MapView()	
                 case .qrScanner:
                     QRScannerView()
                 }

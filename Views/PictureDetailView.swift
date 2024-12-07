@@ -9,63 +9,105 @@ import SwiftUI
 
 struct PictureDetailView: View {
     let picture: Pictures
-    
+    var onClose: () -> Void
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                // Imagen Principal
-                AsyncImage(url: URL(string: picture.linkImage)) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                } placeholder: {
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 40, height: 40, alignment:  .center)
-                        .foregroundStyle(Color.white.opacity(0.7))
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+            VStack(alignment: .leading){
+                /*Text("Detalles de la pintura con ID: \(id ?? "Desconocido")")
+                            .font(.title)
+                            .padding()*/
+                AsyncImage(url: URL(string: picture.linkImage)) { phase in
+                    switch phase {
+                    case .failure:
+                        Image(systemName: "photo")
+                            .font(.largeTitle)
+                    case .success(let image): image
+                            .resizable()
+                            .scaledToFit()  // Ajusta la imagen para que llene el ancho y mantenga la proporción
+                            .frame(maxWidth: .infinity)
+                            
+                    default:
+                        ProgressView()
+                    }
                 }
-                .frame(height: 300)
-                .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
-                
-                
-                // Información básica
-                VStack(alignment: .leading) {
-                    Text(picture.name)
-                        .font(.title)
-                        .bold()
-                        .padding(.bottom)
-                    
-                    Text("Artista")
-                        .font(.headline)
-                    Text("\(picture.authorId)")
-                        .padding(.bottom)
-                        
-                    Text("Tecnica")
-                        .font(.headline)
-                    Text(picture.technique)
-                        .padding(.bottom)
-                    
-                    Text("Categoria")
-                        .font(.headline)
-                    Text(picture.category)
-                        .padding(.bottom)
-                    
+                .padding(.top, 12.5)
+                Text("Copa id: \(picture.id)")
+                    .font(.system(size: 20))
+                    .fontWeight(.bold)
+                    .padding(.top, 12.5)
+                    .padding(.bottom, 12.5)
+                Text("Sala \(1)")
+                    .padding(.leading, 20)
+                Text("Autor: \(picture.authorId)")
+                    .padding(.leading, 20)
+                Text("Técnica: \(picture.technique)")
+                    .padding(.leading, 20)
+                    .padding(.bottom, 12.5)
+                Divider()
+                    .frame(minHeight: 2)
+                    .overlay(Color.gray)
+                HStack(){
                     Text("Descripcion")
-                        .font(.headline)
-                    Text(picture.description)
-                        .padding(.bottom)
-
-                    Text("Año: \(picture.year)")
-                        .font(.subheadline)
-                        .foregroundColor(.blue)
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .padding(.top, 12.5)
+                        .padding(.bottom, 12.5)
+                    Spacer()
+                    Button(action: {
+                        // Acción del botón
+                        print("Botón de play presionado")
+                    }) {
+                        Image(systemName: "play.circle")
+                            .font(.largeTitle) // Ajusta el tamaño del icono
+                            .foregroundColor(.black) // Cambia el color del icono
+                    }
+                    Button(action: {
+                        // Acción del botón
+                        print("Botón de pause presionado")
+                    }) {
+                        Image(systemName: "pause.circle")
+                            .font(.largeTitle) // Ajusta el tamaño del icono
+                            .foregroundColor(.black) // Cambia el color del icono
+                    }
+                    Button(action: {
+                        // Acción del botón
+                        print("Botón de stop presionado")
+                    }) {
+                        Image(systemName: "stop.circle")
+                            .font(.largeTitle) // Ajusta el tamaño del icono
+                            .foregroundColor(.black) // Cambia el color del icono
+                    }
                 }
-                .padding()
+                Text(picture.description)
             }
+            .padding(.horizontal, 25)
+            .navigationBarTitle("", displayMode: .inline)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
+            .edgesIgnoringSafeArea(.all)
+            //.navigationBarHidden(true)
+            Spacer()
+            //.frame(maxHeight: .infinity)
         }
-        .navigationBarTitleDisplayMode(.inline)
-        //.ignoresSafeArea(.container, edges: .top)
+        Button(action: {
+            onClose()
+        }, label: {
+            Text("Cerrar".uppercased())
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.customBlue.opacity(0.8))
+                .cornerRadius(10)
+                .shadow(radius: 10)
+        })
     }
 }
+
+extension Color {
+    static let customLighBlue = Color(red: 80 / 255.0, green: 140 / 255.0, blue: 155 / 255.0)
+    static let customBlue = Color(red: 19 / 255.0, green: 75 / 255.0, blue: 112 / 255.0)
+    static let customLightGray = Color(red: 238 / 255.0, green: 238 / 255.0, blue: 238 / 255.0)
+    static let customDarkGray = Color(red: 23 / 255.0, green: 23 / 255.0, blue: 22 / 255.0)
+    static let customGolden = Color(red: 235 / 255.0, green: 179 / 255.0, blue: 1 / 255.0)
+}
+
 

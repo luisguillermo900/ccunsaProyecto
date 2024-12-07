@@ -10,7 +10,7 @@ import SwiftUI
 struct DetallePintura: View {
     let id: String?
     var body: some View {
-        //ScrollView {
+        ScrollView {
             VStack(alignment: .leading){
                 /*Text("Detalles de la pintura con ID: \(id ?? "Desconocido")")
                             .font(.title)
@@ -81,10 +81,12 @@ struct DetallePintura: View {
             }
             .padding(.horizontal, 25)
             .navigationBarTitle("", displayMode: .inline)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
             //.navigationBarHidden(true)
         Spacer()
             
             //.frame(maxHeight: .infinity)
-        //}
+        }
     }
 }

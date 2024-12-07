@@ -10,14 +10,11 @@ import SwiftUI
 struct PaintingListView: View {
     
     @StateObject private var pictureViewModel = PictureViewModel()
+    @State private var selectedPicture: Pictures?
     
     var body: some View {
         NavigationView {
             VStack {
-                Text("Pinturas")
-                    .foregroundStyle(Color.pink)
-                    .padding()
-                
                 ScrollView {
                     if pictureViewModel.isLoading {
                         ProgressView()
@@ -28,14 +25,21 @@ struct PaintingListView: View {
                     } else {
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160, maximum: 160))], spacing: 15) {
                             ForEach(pictureViewModel.pictures) { pictures in
-                                NavigationLink(destination: PictureDetailView(picture: pictures)) {
+                                //NavigationLink(destination: PictureDetailView(picture: pictures)) {
                                     PictureRowView(picture: pictures)
-                                }
+                                    .onTapGesture {
+                                        selectedPicture = pictures
+                                    }
+                                //}
                             }
                         }
                     }
                 }
-                //.navigationTitle("Pictures")
+                .fullScreenCover(item: $selectedPicture) { picture in
+                    PictureDetailView(picture: picture, onClose: {
+                        selectedPicture = nil
+                    })
+                }              //.navigationTitle("Pictures")
             }
         }
         .onAppear {

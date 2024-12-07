@@ -27,7 +27,7 @@ extension DataRepository {
 
 struct Repository: DataRepository {
     var url: URL {
-        URL(string: "https://ccunsa-77a2c-default-rtdb.firebaseio.com/pictures.json")!
+        URL(string: "https://ccunsa-77a2c-default-rtdb.firebaseio.com/ccunsa/pictures.json")!
     }
 }
 
