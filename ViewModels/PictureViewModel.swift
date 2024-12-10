@@ -42,4 +42,7 @@ class PictureViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
+    func getPictureById(id: Int) -> Pictures? {
+        return pictures.first { $0.id == id }
+    }
 }

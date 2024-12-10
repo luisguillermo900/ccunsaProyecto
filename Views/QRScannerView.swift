@@ -34,6 +34,10 @@ struct QRScannerView: View {
     @State private var selectedSegment = "Camara"
     let segments = ["Camara", "Imagen"]
     
+    //Para obtener pintura seleccionada
+    @StateObject private var pictureViewModel = PictureViewModel()
+    @State private var selectedPicture: Pictures?
+    
     var body: some View {
         VStack(spacing: 8){
             Picker("Select Segment", selection: $selectedSegment) {
@@ -175,12 +179,25 @@ struct QRScannerView: View {
             }
         }
         .background(
+            Group {
+                if let picture = selectedPicture {
+                    NavigationLink(
+                        destination: PictureDetailView(picture: picture, onClose: {
+                            isShowingDetail = false
+                        }),
+                        isActive: $isShowingDetail,
+                        label: { EmptyView() }
+                    )
+                }
+            }
+        )
+        /*.background(
             NavigationLink(
-                destination: DetallePintura(id: qrCodeContent),
+                destination: PictureDetailView(picture: selectedPicture),
                 isActive: $isShowingDetail,
                 label: { EmptyView() }
             )
-        )
+        )*/
     }
     
     func reactivateCamera(){
@@ -276,7 +293,13 @@ struct QRScannerView: View {
         if let features = detector?.features(in: ciImage), !features.isEmpty {
             for feature in features as! [CIQRCodeFeature] {
                 qrCodeContent = feature.messageString
-                isShowingDetail = true
+                if let qrCodeInt = Int(qrCodeContent ?? "") { // Usamos el operador ?? para manejar el caso de nil
+                    selectedPicture = pictureViewModel.getPictureById(id: qrCodeInt)
+                    isShowingDetail = true
+                } else {
+                    // Si no se puede convertir a Int, maneja el error (opcional)
+                    print("No se pudo convertir el código QR a un número")
+                }
             }
         } else {
             qrCodeContent = "No se detectó un código QR en la imagen."
