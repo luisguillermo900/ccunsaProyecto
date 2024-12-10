@@ -173,6 +173,15 @@ struct QRScannerView: View {
         .onChange(of: qrDelegate.scannedCode){ newValue in
             if let code = newValue{
                 scannedCode = code
+                isShowingDetail = true
+                //qrCodeContent = scannedCode
+                if let qrCodeInt = Int(scannedCode) { // Usamos el operador ?? para manejar el caso de nil
+                    selectedPicture = pictureViewModel.getPictureById(id: qrCodeInt)
+                    isShowingDetail = true
+                } else {
+                    // Si no se puede convertir a Int, maneja el error (opcional)
+                    print("No se pudo convertir el código QR a un número")
+                }
                 session.stopRunning()
                 deactivateScannerAnimation()
                 qrDelegate.scannedCode = nil
@@ -193,7 +202,7 @@ struct QRScannerView: View {
         )
         /*.background(
             NavigationLink(
-                destination: PictureDetailView(picture: selectedPicture),
+                destination: DetallePintura(id: qrCodeContent),
                 isActive: $isShowingDetail,
                 label: { EmptyView() }
             )
@@ -267,6 +276,7 @@ struct QRScannerView: View {
                 qrOutput.metadataObjectTypes = [.qr]
                 qrOutput.setMetadataObjectsDelegate(qrDelegate, queue: .main)
                 session.commitConfiguration()
+                
                 DispatchQueue.global(qos: .background).async{
                     session.startRunning()
                 }
