@@ -63,7 +63,3 @@ struct AccountView: View {
         Text("Account View")
     }
 }
-
-#Preview {
-    ArtView()
-}

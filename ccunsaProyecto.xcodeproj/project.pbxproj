@@ -145,8 +145,8 @@
 		8C7F797E2CB4FAD1003BCB10 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8C7F797F2CB4FAE1003BCB10 /* LoginView.swift */,
 				8C7F79812CB4FAEE003BCB10 /* HomeView.swift */,
+				8C7F797F2CB4FAE1003BCB10 /* LoginView.swift */,
 				8C7F79832CB4FB04003BCB10 /* CreateAccountView.swift */,
 				8CA220DC2CB7475700296D5E /* MainTabView.swift */,
 				8CA220DE2CB747E800296D5E /* PaintingListView.swift */,

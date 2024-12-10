@@ -31,12 +31,12 @@ struct PictureDetailView: View {
                     }
                 }
                 .padding(.top, 12.5)
-                Text("Copa id: \(picture.id)")
+                Text(picture.name)
                     .font(.system(size: 20))
                     .fontWeight(.bold)
                     .padding(.top, 12.5)
                     .padding(.bottom, 12.5)
-                Text("Sala \(1)")
+                Text("Sala \(picture.roomId)")
                     .padding(.leading, 20)
                 Text("Autor: \(picture.authorId)")
                     .padding(.leading, 20)
@@ -89,16 +89,6 @@ struct PictureDetailView: View {
             Spacer()
             //.frame(maxHeight: .infinity)
         }
-        Button(action: {
-            onClose()
-        }, label: {
-            Text("Cerrar".uppercased())
-                .foregroundColor(.white)
-                .padding()
-                .background(Color.customBlue.opacity(0.8))
-                .cornerRadius(10)
-                .shadow(radius: 10)
-        })
     }
 }
 
