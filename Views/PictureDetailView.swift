@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct PictureDetailView: View {
+    @State private var audioPlayer: AVPlayer?
+    @State private var isPlaying = false
+    //URL de prueba
+    let audioUrl = URL(string: "https://drive.google.com/uc?export=open&id=1MbDInQ5QSSNYU-eYNlUsad_4IWcYYsp9")!
     let picture: Pictures
     var onClose: () -> Void
     var body: some View {
@@ -56,6 +61,10 @@ struct PictureDetailView: View {
                     Button(action: {
                         // Acción del botón
                         print("Botón de play presionado")
+                        /*playAudio(from: picture.linkAudio) https://drive.google.com/uc?export=open&id=1MbDInQ5QSSNYU-eYNlUsad_4IWcYYsp9
+                        //https://drive.google.com/file/d/1MbDInQ5QSSNYU-eYNlUsad_4IWcYYsp9/view?usp=sharing*/
+                        /*playAudio(from: "https://drive.google.com/uc?export=open&id=1MbDInQ5QSSNYU-eYNlUsad_4IWcYYsp9")*/
+                        playAudio()
                     }) {
                         Image(systemName: "play.circle")
                             .font(.largeTitle) // Ajusta el tamaño del icono
@@ -64,6 +73,7 @@ struct PictureDetailView: View {
                     Button(action: {
                         // Acción del botón
                         print("Botón de pause presionado")
+                        pauseAudio()
                     }) {
                         Image(systemName: "pause.circle")
                             .font(.largeTitle) // Ajusta el tamaño del icono
@@ -72,6 +82,7 @@ struct PictureDetailView: View {
                     Button(action: {
                         // Acción del botón
                         print("Botón de stop presionado")
+                        stopAudio()
                     }) {
                         Image(systemName: "stop.circle")
                             .font(.largeTitle) // Ajusta el tamaño del icono
@@ -80,6 +91,7 @@ struct PictureDetailView: View {
                 }
                 Text(picture.description)
             }
+            
             .padding(.horizontal, 25)
             .navigationBarTitle("", displayMode: .inline)
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
@@ -89,7 +101,40 @@ struct PictureDetailView: View {
             Spacer()
             //.frame(maxHeight: .infinity)
         }
+        .onAppear {
+            prepareAudio()
+        }
     }
+    func prepareAudio() {
+        audioPlayer = AVPlayer(url: audioUrl)
+    }
+    func playAudio() {
+        audioPlayer?.play()
+        isPlaying = true
+    }
+        
+    func pauseAudio() {
+        audioPlayer?.pause()
+        isPlaying = false
+    }
+        
+    func stopAudio() {
+        audioPlayer?.pause()
+        audioPlayer?.seek(to: .zero) // Reinicia al inicio
+        isPlaying = false
+    }
+    /*func playAudio(from urlString: String) {
+            // Convertir la URL desde el string
+        if let url = URL(string: urlString) {
+            // Crear un AVPlayer con la URL
+            player = AVPlayer(url: url)
+                
+            // Reproducir el audio
+            player?.play()
+        } else {
+            print("La URL del audio es inválida.")
+        }
+    }*/
 }
 
 extension Color {
