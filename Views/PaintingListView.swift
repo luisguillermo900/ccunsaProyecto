@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PaintingListView: View {
+    @Environment(\.defaultMinListRowHeight) var minRowHeight
     
     @StateObject private var pictureViewModel = PictureViewModel()
     @State private var selectedPicture: Pictures?
@@ -16,7 +17,7 @@ struct PaintingListView: View {
     @State private var isShowingDetail = false
     
     var body: some View {
-        NavigationView {
+
             VStack {
                 ScrollView {
                     if pictureViewModel.isLoading {
@@ -26,7 +27,7 @@ struct PaintingListView: View {
                         Text(errorMessage)
                             .foregroundStyle(Color .red)
                     } else {
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 160, maximum: 160))], spacing: 15) {
+                        /*LazyVGrid(columns: [GridItem(.adaptive(minimum: 160, maximum: 160))], spacing: 15) {
                             ForEach(pictureViewModel.pictures) { pictures in
                                 //NavigationLink(destination: PictureDetailView(picture: pictures)) {
                                     PictureRowView(picture: pictures)
@@ -36,7 +37,16 @@ struct PaintingListView: View {
                                     }
                                 //}
                             }
-                        }
+                        }*/
+                        VStack {
+                            ForEach(pictureViewModel.pictures) { pictures in
+                            PictureRowView(picture: pictures)
+                                .onTapGesture {
+                                    selectedPicture = pictures
+                                    isShowingDetail = true
+                                }
+                            }
+                        }   
                     }
                 }
                 /*.fullScreenCover(item: $selectedPicture) { picture in
@@ -45,24 +55,25 @@ struct PaintingListView: View {
                     })
                 }              //.navigationTitle("Pictures")*/
             }
-        }
-        .onAppear {
-            pictureViewModel.fetchPictures() // Cargar datos al inicio y en el scroll
-        }
-        .background(
-            Group {
-                if let picture = selectedPicture {
-                    NavigationLink(
-                        destination: PictureDetailView(picture: picture, onClose: {
-                            isShowingDetail = false
-                            selectedPicture = nil
-                        }),
-                        isActive: $isShowingDetail,
-                        label: { EmptyView() }
-                    )
-                }
+            .onAppear {
+                pictureViewModel.fetchPictures() // Cargar datos al inicio y en el scroll
             }
-        )
+            .background(
+                Group {
+                    if let picture = selectedPicture {
+                        NavigationLink(
+                            destination: PictureDetailView(picture: picture, onClose: {
+                                isShowingDetail = false
+                                selectedPicture = nil
+                            }),
+                            isActive: $isShowingDetail,
+                            label: { EmptyView() }
+                        )
+                    }
+                }
+            )
+        
+        
     }
 }
 

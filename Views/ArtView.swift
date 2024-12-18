@@ -54,7 +54,7 @@ struct ReceivedView: View {
 }
 struct SentView: View {
     var body: some View {
-        DetallePintura(id: "1")
+        GalleryListView()
         //Text("Sent View")
     }
 }
