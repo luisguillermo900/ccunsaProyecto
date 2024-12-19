@@ -62,7 +62,7 @@ class PictureViewModel: ObservableObject {
     func getPictureById(id: Int) -> Pictures? {
         return pictures.first { $0.id == id }
     }
-    func filteredPictures(forGalleryId galleryId: Int) -> [Pictures] {
+    func filterPicturesByGallery(galleryId: Int) -> [Pictures] {
         return pictures.filter { $0.roomId == galleryId }
     }
 }

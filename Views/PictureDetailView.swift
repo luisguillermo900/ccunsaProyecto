@@ -123,18 +123,6 @@ struct PictureDetailView: View {
         audioPlayer?.seek(to: .zero) // Reinicia al inicio
         isPlaying = false
     }
-    /*func playAudio(from urlString: String) {
-            // Convertir la URL desde el string
-        if let url = URL(string: urlString) {
-            // Crear un AVPlayer con la URL
-            player = AVPlayer(url: url)
-                
-            // Reproducir el audio
-            player?.play()
-        } else {
-            print("La URL del audio es inválida.")
-        }
-    }*/
 }
 
 extension Color {

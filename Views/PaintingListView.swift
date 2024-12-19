@@ -9,8 +9,9 @@ import SwiftUI
 
 struct PaintingListView: View {
     @Environment(\.defaultMinListRowHeight) var minRowHeight
-    
+    @Binding var galleryId: Int
     @StateObject private var pictureViewModel = PictureViewModel()
+    @State private var filteredPictures: [Pictures] = []
     @State private var selectedPicture: Pictures?
     
     //Provisional
@@ -27,21 +28,47 @@ struct PaintingListView: View {
                         Text(errorMessage)
                             .foregroundStyle(Color .red)
                     } else {
-                        VStack {
-                            ForEach(pictureViewModel.pictures) { pictures in
-                            PictureRowView(picture: pictures)
-                                .onTapGesture {
-                                    selectedPicture = pictures
-                                    isShowingDetail = true
+                        if(galleryId == 0){
+                            VStack {
+                                ForEach(pictureViewModel.pictures) { pictures in
+                                PictureRowView(picture: pictures)
+                                    .onTapGesture {
+                                        selectedPicture = pictures
+                                        isShowingDetail = true
+                                    }
                                 }
                             }
+                            .padding(.horizontal, 15)
+                        } else if (galleryId > 0) {
+                            VStack {
+                                ForEach(filteredPictures) { pictures in
+                                PictureRowView(picture: pictures)
+                                    .onTapGesture {
+                                        selectedPicture = pictures
+                                        isShowingDetail = true
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 15)
                         }
-                        .padding(.horizontal, 15)
+                        
                     }
                 }
             }
             .onAppear {
-                pictureViewModel.fetchPictures() // Cargar datos al inicio y en el scroll
+                if pictureViewModel.pictures.isEmpty {
+                    pictureViewModel.fetchPictures()
+                }
+            }
+            .onChange(of: pictureViewModel.pictures) { _ in
+                if galleryId > 0 {
+                    filteredPictures = pictureViewModel.filterPicturesByGallery(galleryId: galleryId)
+                }
+            }
+            .onChange(of: galleryId) { _ in
+                if galleryId > 0 {
+                    filteredPictures = pictureViewModel.filterPicturesByGallery(galleryId: galleryId)
+                }
             }
             .background(
                 Group {

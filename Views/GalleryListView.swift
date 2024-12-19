@@ -9,8 +9,7 @@ import SwiftUI
 
 struct GalleryListView: View {
     @StateObject private var pictureViewModel = PictureViewModel()
-    @State var selection1: String? = nil
-    @State var selectedGalleryId: Int? = nil
+    @State var selectedGalleryId: Int = 1
     
     var body: some View {
         VStack {
@@ -21,7 +20,7 @@ struct GalleryListView: View {
             .padding(.bottom, 10)
             .padding(.horizontal, 15)
             ScrollView {
-                PaintingListView()
+                PaintingListView(galleryId: $selectedGalleryId)
             }
         }
         .onAppear {
@@ -29,6 +28,9 @@ struct GalleryListView: View {
         }
         .onChange(of: pictureViewModel.pictures) { _ in
             pictureViewModel.fetchGalleries()
+        }
+        .onChange(of: selectedGalleryId) { newValue in
+            print("Nuevo ID de galería seleccionado: \(newValue)")
         }
     }
 }
@@ -39,9 +41,8 @@ enum DropDownPickerState {
 }
 
 struct DropDownPicker: View {
-    
     @State var selection: String?
-    @Binding var selectedGalleryId: Int?
+    @Binding var selectedGalleryId: Int
     var state: DropDownPickerState = .bottom
     var options: [GalleryOption]
     var maxWidth: CGFloat = 180
@@ -50,7 +51,7 @@ struct DropDownPicker: View {
     
     @SceneStorage("drop_down_zindex") private var index = 1000.0
     @State var zindex = 1000.0
-    
+  
     var body: some View {
         GeometryReader {
             let size = $0.size
@@ -100,6 +101,11 @@ struct DropDownPicker: View {
         //.frame(width: maxWidth, height: 50)
         .frame(height: 50)
         .zIndex(zindex)
+        .onChange(of: options) { newOptions in
+            if let selected = newOptions.first(where: { $0.id == selectedGalleryId }) {
+                selection = selected.name
+            }
+        }
     }
     
     

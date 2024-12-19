@@ -47,8 +47,9 @@ struct ArtView: View {
 }
 
 struct ReceivedView: View {
+    @State private var defaultGalleryFilter: Int = 0
     var body: some View {
-        PaintingListView()
+        PaintingListView(galleryId: $defaultGalleryFilter)
         //Text("Sent View")
     }
 }
