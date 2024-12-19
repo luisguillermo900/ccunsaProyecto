@@ -12,8 +12,8 @@ struct ArtView: View {
     enum Tab: String, CaseIterable {
         case picture = "Pinturas"
         case gallery = "Galerias"
-        case author = "Autores"
-        case category = "Categorias"
+        //case author = "Autores"
+        //case category = "Categorias"
     }
     
     var body: some View {
@@ -39,8 +39,8 @@ struct ArtView: View {
             switch selectedTab {
                 case .picture: ReceivedView()
                 case .gallery: SentView()
-                case .author: AccountView()
-                case .category: AccountView()
+                //case .author: AccountView()
+                //case .category: AccountView()
             }
         }
     }

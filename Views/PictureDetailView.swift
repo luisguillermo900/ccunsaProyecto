@@ -28,7 +28,7 @@ struct PictureDetailView: View {
                             .font(.largeTitle)
                     case .success(let image): image
                             .resizable()
-                            .scaledToFit()  // Ajusta la imagen para que llene el ancho y mantenga la proporción
+                            .scaledToFit()  
                             .frame(maxWidth: .infinity)
                             
                     default:
