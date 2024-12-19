@@ -27,17 +27,6 @@ struct PaintingListView: View {
                         Text(errorMessage)
                             .foregroundStyle(Color .red)
                     } else {
-                        /*LazyVGrid(columns: [GridItem(.adaptive(minimum: 160, maximum: 160))], spacing: 15) {
-                            ForEach(pictureViewModel.pictures) { pictures in
-                                //NavigationLink(destination: PictureDetailView(picture: pictures)) {
-                                    PictureRowView(picture: pictures)
-                                    .onTapGesture {
-                                        selectedPicture = pictures
-                                        isShowingDetail = true
-                                    }
-                                //}
-                            }
-                        }*/
                         VStack {
                             ForEach(pictureViewModel.pictures) { pictures in
                             PictureRowView(picture: pictures)
@@ -46,14 +35,10 @@ struct PaintingListView: View {
                                     isShowingDetail = true
                                 }
                             }
-                        }   
+                        }
+                        .padding(.horizontal, 15)
                     }
                 }
-                /*.fullScreenCover(item: $selectedPicture) { picture in
-                    PictureDetailView(picture: picture, onClose: {
-                        selectedPicture = nil
-                    })
-                }              //.navigationTitle("Pictures")*/
             }
             .onAppear {
                 pictureViewModel.fetchPictures() // Cargar datos al inicio y en el scroll

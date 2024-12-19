@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GalleryListView: View {
     @StateObject private var pictureViewModel = PictureViewModel()
+    @State private var selectedOption = "Opción 1"
+    let options = ["Opción 1", "Opción 2", "Opción 3"]
     
     var body: some View {
         VStack {
@@ -20,7 +22,7 @@ struct GalleryListView: View {
                     Text(errorMessage)
                         .foregroundStyle(Color .red)
                 } else {
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 160, maximum: 160))], spacing: 15) {
+                    /*LazyVGrid(columns: [GridItem(.adaptive(minimum: 160, maximum: 160))], spacing: 15) {
                         ForEach(pictureViewModel.galleries, id: \.self) { gallery in
                             Button(action: {
                                 //selectedGallery = gallery
@@ -32,6 +34,18 @@ struct GalleryListView: View {
                                     .cornerRadius(8)
                             }
                         }
+                    }*/
+                    VStack {
+                        Text("Seleccionado: \(selectedOption)")
+                        .font(.headline)
+                                
+                        Picker("Selecciona una opción", selection: $selectedOption) {
+                                ForEach(options, id: \.self) { option in
+                                    Text(option)
+                                }
+                            }
+                            .pickerStyle(MenuPickerStyle()) // Estilo de lista desplegable
+                            .padding()
                     }
                     
                     // Mostrar pinturas si una galería está seleccionada
